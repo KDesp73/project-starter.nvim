@@ -10,9 +10,24 @@ A neovim plugin for creating template project structures for various languages
 
 Install using your preffered package manager
 
-Packer
+### Packer
+
 ```lua
 use "KDesp73/project-starter.nvim"
+```
+
+### Lazy
+
+```lua
+{
+   "KDesp73/project-starter.nvim"
+}
+```
+
+### Plug
+
+```lua
+Plug 'KDesp73/project-starter.nvim'
 ```
 
 ## Setup
