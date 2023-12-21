@@ -1,0 +1,14 @@
+================================================================================
+                                                               *myplugin.nvim*
+
+                                                                         *tag*
+
+This is a plugin
+Run
+<
+:helptags doc/
+>
+
+to make the help file visible to neovim
+
+vim:tw=78:ts=8:ft=help:norl:
