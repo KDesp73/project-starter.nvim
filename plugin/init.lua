@@ -1,1 +1,1 @@
-print("myplugin is loaded\n")
+print("project-starter is loaded\n")
