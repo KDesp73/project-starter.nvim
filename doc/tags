@@ -1,2 +1,4 @@
+CreateProject	project-starter.txt	/*CreateProject*
+CurrentSupport	project-starter.txt	/*CurrentSupport*
+Setup	project-starter.txt	/*Setup*
 project-starter.nvim	project-starter.txt	/*project-starter.nvim*
-tag	project-starter.txt	/*tag*

@@ -1,14 +1,31 @@
 ================================================================================
                                                         *project-starter.nvim*
 
-                                                                         *tag*
+    project-starter is a plugin that gets you up and running quickly when
+    creating a brand new project
 
-This is a plugin
-Run
-<
-:helptags doc/
->
+                                                                       *Setup*
+ 
+    require("project-starter").setup({
+        default_paths = {
+            cpp = "path/to/cpp/projects/",
+            java = "path/to/java/projects/", -- this includes java swing projects
+            nvim_plugins = "path/to/neovim/plugins",
+        },
+        cd = false, -- change project directory after creation (default is true))
+    })
+ 
 
-to make the help file visible to neovim
+                                                               *CreateProject*
+
+    Run :CreateProject <lang> and add the necessary information afterwards to
+    create yout starter project structure
+
+                                                              *CurrentSupport*
+    The plugin currently supports:
+    1. C++
+    2. Java
+    3. Java Swing
+    4. Neovim Plugin
 
 vim:tw=78:ts=8:ft=help:norl:
