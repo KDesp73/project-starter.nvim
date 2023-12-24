@@ -39,6 +39,7 @@ require("project-starter").setup({
         java = "path/to/java/projects/", -- this includes java swing projects
         nvim_plugins = "path/to/neovim/plugins",
         python = "path/to/python/projects",
+        ruby = "path/to/ruby/projects",
     },
     cd = false, -- change project directory after creation (default is true)
 })
@@ -61,6 +62,7 @@ Currently supporting:
 - Java Swing
 - Neovim Plugin with Lua
 - Python
+- Ruby
 
 ## License
 
