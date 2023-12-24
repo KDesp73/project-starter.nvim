@@ -70,5 +70,23 @@ return {
         if options.cd then
             vim.cmd("cd " .. path .. name)
         end
+    end,
+
+    ["python"] = function ()
+        local name = vim.fn.input("Name: ")
+        local path = paths["python"]
+
+        if path == "" then
+            path = vim.fn.input("Path: ")
+        end
+        
+        print("Path: ", path)
+        print("Command: ", ":silent !cd " .. path .. " && " .. "git clone https://github.com/KDesp73/python-starter.git " .. name)
+        vim.cmd(":silent !cd " .. path .. " && " .. "git clone https://github.com/KDesp73/python-starter.git " .. name)
+
+        if options.cd then
+            vim.cmd("cd " .. path .. name)
+        end
+
     end
 }

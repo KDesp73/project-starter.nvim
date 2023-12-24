@@ -27,5 +27,6 @@
     2. Java
     3. Java Swing
     4. Neovim Plugin
+    5. Python
 
 vim:tw=78:ts=8:ft=help:norl:

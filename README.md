@@ -38,6 +38,7 @@ require("project-starter").setup({
         cpp = "path/to/cpp/projects/",
         java = "path/to/java/projects/", -- this includes java swing projects
         nvim_plugins = "path/to/neovim/plugins",
+        python = "path/to/python/projects",
     },
     cd = false, -- change project directory after creation (default is true)
 })
