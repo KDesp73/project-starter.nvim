@@ -70,6 +70,19 @@ return {
         utils.change_nvim_directory(path .. name)
 
         return path .. name
+    end,
+
+    ["ruby"] = function(name)
+        name = name or vim.fn.input("Name: ")
+        local path = paths["ruby"]
+
+        if not utils.handle_invalid_path(path) then return nil end
+
+        run_command.ruby(path, name)
+
+        utils.change_nvim_directory(path .. name)
+
+        return path .. name
     end
 }
 

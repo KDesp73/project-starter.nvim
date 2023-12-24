@@ -22,4 +22,8 @@ return {
     python = function (path, name)
         vim.cmd(":silent !cd " .. path .. " && " .. "git clone https://github.com/KDesp73/python-starter.git " .. name)
     end,
+
+    ruby = function (path, name)
+        vim.cmd(":silent !cd " .. path .. " && " .. "bundle gem " .. name)
+    end
 }

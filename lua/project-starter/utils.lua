@@ -51,4 +51,26 @@ utils.handle_invalid_path = function(path)
     return true
 end
 
+utils.get_implemented_languages = function ()
+    local keyset = {}
+
+    for k, v in pairs(require("project-starter.builders")) do
+        table.insert(keyset, k)
+    end
+
+    local str = ""
+
+    for i = 1, #keyset do
+        str = str .. keyset[i] .. ", "
+    end
+
+    -- Check if the string is not empty before attempting to remove the last two characters
+    if #str > 0 then
+        return str:sub(1, -3)
+    else
+        return str
+    end
+end
+
+
 return utils

@@ -26,6 +26,9 @@ M.setup = function (opts)
         if opts.default_paths.python then
             paths.python = opts.default_paths.python
         end
+        if opts.default_paths.ruby then
+            paths.ruby = opts.default_paths.ruby
+        end
     end
 
     if opts.cd ~= nil then
@@ -53,8 +56,10 @@ vim.api.nvim_create_user_command(
         local arguments = {}
         for word in args.args:gmatch("%w+") do table.insert(arguments, word) end
 
-        if arguments == {} then
-            print("At least one argument is needed (cpp, java, swing, nvim_plugin, python)")
+        -- P(args)
+
+        if #arguments == 0 then
+            print("At least one argument is needed (" .. utils.get_implemented_languages() .. ")")
             return nil
         end
 
