@@ -60,6 +60,7 @@ Currently supporting:
 - Java
 - Java Swing
 - Neovim Plugin with Lua
+- Python
 
 ## License
 
