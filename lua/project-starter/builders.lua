@@ -1,90 +1,77 @@
 local vim = vim
 
 local paths = require("project-starter.paths")
-local options = require("project-starter.options")
+local utils = require("project-starter.utils")
+
 
 return {
-    ["cpp"] = function()
-        local name = vim.fn.input("Name: ")
-        local path = paths["cpp"]
+    ["cpp"] = function(name)
+        name  = name or vim.fn.input("Name: ")
+        local path = paths["cpp"] or vim.fn.input("Path: ")
 
-        if path == "" then
-            path = vim.fn.input("Path: ")
-        end
+        if not utils.handle_invalid_path(path) then return nil end
 
         vim.cmd(":silent !cd ".. path .. " && " .. "git clone https://github.com/KDesp73/CPP-Project-Template " .. name)
 
-        if options.cd then
-            vim.cmd("cd " .. path .. name)
-
-            if package.loaded['nvim-tree'] then
-                require("nvim-tree")
-            end
-        end
+        utils.change_nvim_directory(path .. name)
+        return path .. name
     end,
 
     ["java"] = function()
         local groupId = vim.fn.input("Group Id: ")
         local artifactId = vim.fn.input("Artifact Id: ")
-        local path = paths["java"]
+        local path = paths["java"] or vim.fn.input("Path: ")
 
-        if path == "" then
-            path = vim.fn.input("Path: ")
-        end
+        if not utils.handle_invalid_path(path) then return nil end
 
         local command = "mvn archetype:generate -DgroupId=" .. groupId .. " -DartifactId=" .. artifactId .. " -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false"
 
         vim.cmd(":silent !cd " .. path .. " && " .. command)
 
-        if options.cd then
-            vim.cmd("cd " .. path .. artifactId)
-        end
+        utils.change_nvim_directory(path .. artifactId)
+
+        return path .. artifactId
     end,
 
-    ["swing"] = function ()
-        local name = vim.fn.input("Name: ")
-        local path = paths["java"]
+    ["swing"] = function (name)
+        name  = name or vim.fn.input("Name: ")
+        local path = paths["java"] or vim.fn.input("Path: ")
 
-        if path == "" then
-            path = vim.fn.input("Path: ")
-        end
-        
+        if not utils.handle_invalid_path(path) then return nil end
+
         vim.cmd(":silent !cd ".. path .. " && " .. "git clone https://github.com/KDesp73/swing-gui-starter " .. name)
 
-        if options.cd then
-            vim.cmd("cd " .. path .. name)
-        end
+        utils.change_nvim_directory(path .. name)
+
+        return path .. name
     end,
 
 
-    ["nvim_plugin"] = function ()
-        local name = vim.fn.input("Name: ")
-        local path = paths["nvim_plugin"]
+    ["nvim_plugin"] = function (name)
+        name  = name or vim.fn.input("Name: ")
+        local path = paths["nvim_plugin"] or vim.fn.input("Path: ")
 
-        if path == "" then
-            path = vim.fn.input("Path: ")
-        end
-        
+        if not utils.handle_invalid_path(path) then return nil end
+
         vim.cmd(":silent !cd " .. path .. " && " .. "git clone https://github.com/KDesp73/plugin-template.nvim " .. name)
 
-        if options.cd then
-            vim.cmd("cd " .. path .. name)
-        end
+        utils.change_nvim_directory(path .. name)
+
+        return path .. name
     end,
 
-    ["python"] = function ()
-        local name = vim.fn.input("Name: ")
+    ["python"] = function (name)
+        name = name or vim.fn.input("Name: ")
         local path = paths["python"]
 
-        if path == "" then
-            path = vim.fn.input("Path: ")
-        end
-        
+        if not utils.handle_invalid_path(path) then return nil end
+
         vim.cmd(":silent !cd " .. path .. " && " .. "git clone https://github.com/KDesp73/python-starter.git " .. name)
 
-        if options.cd then
-            vim.cmd("cd " .. path .. name)
-        end
+        utils.change_nvim_directory(path .. name)
 
+        return path .. name
     end
 }
+
+

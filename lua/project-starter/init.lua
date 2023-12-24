@@ -4,6 +4,10 @@ local vim = vim
 local builders = require("project-starter.builders")
 local paths = require("project-starter.paths")
 local options = require("project-starter.options")
+local utils = require("project-starter.utils")
+
+
+
 
 ---@param opts table
 M.setup = function (opts)
@@ -24,17 +28,20 @@ M.setup = function (opts)
         end
     end
 
-    if opts.cd then
+    if opts.cd ~= nil then
         options.cd = opts.cd
     end
+
+    return opts
 end
 
 ---@param lang string 
-M.create_project = function (lang)
+M.create_project = function (lang, name)
     lang = lang or "nil"
     local builder = builders[lang]
     if builder then
-        builder()
+        local path = builder(name)
+        utils.success(lang, path)
     else
         print("Unsupported language: \'" .. lang .. "\'")
     end
@@ -47,14 +54,14 @@ vim.api.nvim_create_user_command(
         for word in args.args:gmatch("%w+") do table.insert(arguments, word) end
 
         if arguments == {} then
-            print("At least one argument is needed (cpp, java, swing, nvim_plugin)")
+            print("At least one argument is needed (cpp, java, swing, nvim_plugin, python)")
             return nil
         end
 
-        M.create_project(arguments[1])
+        M.create_project(arguments[1], arguments[2])
     end,
     { desc = "Create a template project", nargs = '?' }
 )
 
-
+    
 return M

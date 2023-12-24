@@ -1,6 +1,6 @@
 return {
-    cpp = "",
-    java = "",
-    nvim_plugins = "",
-    python = "",
+    cpp = nil,
+    java = nil,
+    nvim_plugins = nil,
+    python = nil,
 }

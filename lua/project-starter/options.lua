@@ -1,3 +1,3 @@
 return {
-    cd = true,
+    cd = true
 }
