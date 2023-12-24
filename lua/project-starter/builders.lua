@@ -80,8 +80,6 @@ return {
             path = vim.fn.input("Path: ")
         end
         
-        print("Path: ", path)
-        print("Command: ", ":silent !cd " .. path .. " && " .. "git clone https://github.com/KDesp73/python-starter.git " .. name)
         vim.cmd(":silent !cd " .. path .. " && " .. "git clone https://github.com/KDesp73/python-starter.git " .. name)
 
         if options.cd then
