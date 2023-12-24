@@ -63,5 +63,5 @@ vim.api.nvim_create_user_command(
     { desc = "Create a template project", nargs = '?' }
 )
 
-    
+
 return M

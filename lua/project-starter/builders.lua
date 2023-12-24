@@ -2,6 +2,7 @@ local vim = vim
 
 local paths = require("project-starter.paths")
 local utils = require("project-starter.utils")
+local run_command = require("project-starter.commands")
 
 
 return {
@@ -11,7 +12,7 @@ return {
 
         if not utils.handle_invalid_path(path) then return nil end
 
-        vim.cmd(":silent !cd ".. path .. " && " .. "git clone https://github.com/KDesp73/CPP-Project-Template " .. name)
+        run_command.cpp(path, name)
 
         utils.change_nvim_directory(path .. name)
         return path .. name
@@ -24,9 +25,7 @@ return {
 
         if not utils.handle_invalid_path(path) then return nil end
 
-        local command = "mvn archetype:generate -DgroupId=" .. groupId .. " -DartifactId=" .. artifactId .. " -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false"
-
-        vim.cmd(":silent !cd " .. path .. " && " .. command)
+        run_command.java(path, groupId, artifactId)
 
         utils.change_nvim_directory(path .. artifactId)
 
@@ -39,7 +38,7 @@ return {
 
         if not utils.handle_invalid_path(path) then return nil end
 
-        vim.cmd(":silent !cd ".. path .. " && " .. "git clone https://github.com/KDesp73/swing-gui-starter " .. name)
+        run_command.swing(path, name)
 
         utils.change_nvim_directory(path .. name)
 
@@ -53,7 +52,7 @@ return {
 
         if not utils.handle_invalid_path(path) then return nil end
 
-        vim.cmd(":silent !cd " .. path .. " && " .. "git clone https://github.com/KDesp73/plugin-template.nvim " .. name)
+        run_command.nvim_plugin(path, name)
 
         utils.change_nvim_directory(path .. name)
 
@@ -66,7 +65,7 @@ return {
 
         if not utils.handle_invalid_path(path) then return nil end
 
-        vim.cmd(":silent !cd " .. path .. " && " .. "git clone https://github.com/KDesp73/python-starter.git " .. name)
+        run_command.python(path, name)
 
         utils.change_nvim_directory(path .. name)
 
