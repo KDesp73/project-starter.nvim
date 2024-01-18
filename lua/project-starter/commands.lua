@@ -4,7 +4,7 @@ local M = {}
 
 M.cpp = function(path, name)
     vim.cmd(":silent !cd ".. path .. " && " .. "git clone --depth=1 https://github.com/KDesp73/CPP-Project-Template " .. name)
-    vim.cmd(":silent !cd " .. path .. name .. " && rm -rf .git")
+    vim.cmd(":silent !cd " .. path .. name .. " && rm -r .git")
 end
 
 M.java = function(path, groupId, artifactId)
@@ -15,17 +15,17 @@ end
 
 M.swing  = function(path, name)
     vim.cmd(":silent !cd ".. path .. " && " .. "git clone --depth=1 https://github.com/KDesp73/swing-gui-starter " .. name)
-    vim.cmd(":silent !cd " .. path .. name .. " && rm -rf .git")
+    vim.cmd(":silent !cd " .. path .. name .. " && rm -r .git")
 end
 
 M.nvim_plugin = function (path, name)
     vim.cmd(":silent !cd " .. path .. " && " .. "git clone --depth=1 https://github.com/KDesp73/plugin-template.nvim " .. name)
-    vim.cmd(":silent !cd " .. path .. name .. " && rm -rf .git")
+    vim.cmd(":silent !cd " .. path .. name .. " && rm -r .git")
 end
 
 M.python = function (path, name)
     vim.cmd(":silent !cd " .. path .. " && " .. "git clone --depth=1 https://github.com/KDesp73/python-starter.git " .. name)
-    vim.cmd(":silent !cd " .. path .. name .. " && rm -rf .git")
+    vim.cmd(":silent !cd " .. path .. name .. " && rm -r .git")
 end
 
 M.ruby = function (path, name)
