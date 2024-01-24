@@ -18,7 +18,7 @@ M.swing  = function(path, name)
     vim.cmd(":silent !cd " .. path .. name .. " && rm -r .git")
 end
 
-M.nvim_plugin = function (path, name)
+M.nvimplugin = function (path, name)
     vim.cmd(":silent !cd " .. path .. " && " .. "git clone --depth=1 https://github.com/KDesp73/plugin-template.nvim " .. name)
     vim.cmd(":silent !cd " .. path .. name .. " && rm -r .git")
 end

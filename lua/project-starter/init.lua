@@ -6,9 +6,6 @@ local paths = require("project-starter.paths")
 local options = require("project-starter.options")
 local utils = require("project-starter.utils")
 
-
-
-
 ---@param opts table
 M.setup = function (opts)
     opts = opts or {}
@@ -20,8 +17,8 @@ M.setup = function (opts)
         if opts.default_paths.cpp then
             paths.cpp = opts.default_paths.cpp
         end
-        if opts.default_paths.java then
-            paths.nvim_plugins = opts.default_paths.nvim_plugins
+        if opts.default_paths.nvimplugins then
+            paths.nvimplugins = opts.default_paths.nvimplugins
         end
         if opts.default_paths.python then
             paths.python = opts.default_paths.python
