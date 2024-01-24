@@ -52,7 +52,7 @@ return {
 
         if not utils.handle_invalid_path(path) then return nil end
 
-        run_command.nvim_plugin(path, name)
+        run_command.nvimplugin(path, name)
 
         utils.change_nvim_directory(path .. name)
 
