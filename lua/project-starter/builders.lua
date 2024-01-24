@@ -46,7 +46,7 @@ return {
     end,
 
 
-    ["nvim_plugin"] = function (name)
+    ["nvimplugin"] = function (name)
         name  = name or vim.fn.input("Name: ")
         local path = paths["nvim_plugin"] or vim.fn.input("Path: ")
 
