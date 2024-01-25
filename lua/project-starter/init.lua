@@ -18,7 +18,7 @@ M.setup = function (opts)
             paths.cpp = opts.default_paths.cpp
         end
         if opts.default_paths.nvimplugins then
-            paths.nvimplugins = opts.default_paths.nvimplugins
+            paths.nvimplugin = opts.default_paths.nvimplugin
         end
         if opts.default_paths.python then
             paths.python = opts.default_paths.python
