@@ -17,7 +17,7 @@ M.setup = function (opts)
         if opts.default_paths.java then
             paths.java = opts.default_paths.java
         end
-        if opts.default_paths.nvimplugins then
+        if opts.default_paths.nvimplugin then
             paths.nvimplugin = opts.default_paths.nvimplugin
         end
         if opts.default_paths.python then
