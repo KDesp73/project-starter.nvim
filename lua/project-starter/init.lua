@@ -11,11 +11,11 @@ M.setup = function (opts)
     opts = opts or {}
 
     if opts.default_paths then
-        if opts.default_paths.java then
-            paths.java = opts.default_paths.java
-        end
         if opts.default_paths.cpp then
             paths.cpp = opts.default_paths.cpp
+        end
+        if opts.default_paths.java then
+            paths.java = opts.default_paths.java
         end
         if opts.default_paths.nvimplugins then
             paths.nvimplugin = opts.default_paths.nvimplugin

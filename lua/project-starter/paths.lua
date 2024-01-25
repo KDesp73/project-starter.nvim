@@ -3,4 +3,5 @@ return {
     java = nil,
     nvimplugins = nil,
     python = nil,
+    ruby = nil,
 }
