@@ -23,11 +23,12 @@
 
                                                               *CurrentSupport*
     The plugin currently supports:
-    1. C++
-    2. Java
-    3. Java Swing
-    4. Neovim Plugin
-    5. Python
-    6. Ruby
+    1. C
+    2. C++
+    3. Java
+    4. Java Swing
+    5. Neovim Plugin
+    6. Python
+    7. Ruby
 
 vim:tw=78:ts=8:ft=help:norl:

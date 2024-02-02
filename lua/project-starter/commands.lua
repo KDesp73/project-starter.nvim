@@ -2,6 +2,11 @@ local vim = vim
 
 local M = {}
 
+M.c = function(path, name)
+    vim.cmd(":silent !cd ".. path .. " && " .. "git clone --depth=1 https://github.com/KDesp73/c-starter " .. name)
+    vim.cmd(":silent !cd " .. path .. name .. " && rm -r .git")
+end
+
 M.cpp = function(path, name)
     vim.cmd(":silent !cd ".. path .. " && " .. "git clone --depth=1 https://github.com/KDesp73/CPP-Project-Template " .. name)
     vim.cmd(":silent !cd " .. path .. name .. " && rm -r .git")

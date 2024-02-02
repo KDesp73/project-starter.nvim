@@ -6,6 +6,18 @@ local run_command = require("project-starter.commands")
 
 
 return {
+    ["c"] = function (name)
+        name  = name or vim.fn.input("Name: ")
+        local path = paths["c"] or vim.fn.input("Path: ")
+
+        if not utils.handle_invalid_path(path) then return nil end
+
+        run_command.c(path, name)
+
+        utils.change_nvim_directory(path .. name)
+        return path .. name
+    end,
+
     ["cpp"] = function(name)
         name  = name or vim.fn.input("Name: ")
         local path = paths["cpp"] or vim.fn.input("Path: ")

@@ -1,4 +1,5 @@
 return {
+    c = nil,
     cpp = nil,
     java = nil,
     nvimplugins = nil,
