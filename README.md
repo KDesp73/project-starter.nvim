@@ -35,6 +35,7 @@ Plug 'KDesp73/project-starter.nvim'
 ```lua
 require("project-starter").setup({
     default_paths = {
+        c = "path/to/c/projects/",
         cpp = "path/to/cpp/projects/",
         java = "path/to/java/projects/", -- this includes java swing projects
         nvim_plugins = "path/to/neovim/plugins",
@@ -57,6 +58,7 @@ Get additional help with `:help project-starter`
 
 Currently supporting:
 
+- C
 - C++
 - Java
 - Java Swing
