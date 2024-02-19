@@ -29,10 +29,17 @@ M.setup = function (opts)
         if opts.default_paths.ruby then
             paths.ruby = opts.default_paths.ruby
         end
+        if opts.default_paths.android then
+            paths.android = opts.default_paths.android
+        end
     end
 
     if opts.cd ~= nil then
         options.cd = opts.cd
+    end
+
+    if opts.jdk_app_package_name ~= nil then
+        options.jdk_app_package_name = opts.jdk_app_package_name
     end
 
     return opts

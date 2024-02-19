@@ -30,5 +30,6 @@
     5. Neovim Plugin
     6. Python
     7. Ruby
+    8. Android Apps with Kotlin
 
 vim:tw=78:ts=8:ft=help:norl:

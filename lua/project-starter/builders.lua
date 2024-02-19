@@ -3,9 +3,23 @@ local vim = vim
 local paths = require("project-starter.paths")
 local utils = require("project-starter.utils")
 local run_command = require("project-starter.commands")
+local options     = require("project-starter.options")
 
 
 return {
+    ["android"] = function (name)
+        name  = name or vim.fn.input("Name: ")
+        local package_name = options.jdk_app_package_name or vim.fn.input("App Package Name: ")
+
+        local path = paths["android"] or vim.fn.input("Path: ")
+        if not utils.handle_invalid_path(path) then return nil end
+
+        run_command.android(path, name, package_name)
+
+        utils.change_nvim_directory(path .. name)
+        return path .. name
+    end,
+
     ["c"] = function (name)
         name  = name or vim.fn.input("Name: ")
         local path = paths["c"] or vim.fn.input("Path: ")
@@ -31,7 +45,7 @@ return {
     end,
 
     ["java"] = function()
-        local groupId = vim.fn.input("Group Id: ")
+        local groupId = options.jdk_app_package_name or vim.fn.input("Group Id: ")
         local artifactId = vim.fn.input("Artifact Id: ")
         local path = paths["java"] or vim.fn.input("Path: ")
 

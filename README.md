@@ -4,7 +4,7 @@ A neovim plugin for creating template project structures for various languages
 
 ## Requirements
 
-- `neovim >= 0.7.0`
+- `neovim >= 0.8.0`
 
 ## Install
 
@@ -41,6 +41,7 @@ require("project-starter").setup({
         nvim_plugins = "path/to/neovim/plugins",
         python = "path/to/python/projects",
         ruby = "path/to/ruby/projects",
+        android = "path/to/android/projects"
     },
     cd = false, -- change project directory after creation (default is true)
 })
@@ -65,6 +66,7 @@ Currently supporting:
 - Neovim Plugin with Lua
 - Python
 - Ruby
+- Android Apps with Kotlin
 
 ## License
 
@@ -73,3 +75,7 @@ Currently supporting:
 ## Author
 
 [KDesp73](https://github.com/KDesp73)
+
+## Acknowledments
+
+A big thank you to [nekocode](https://github.com/nekocode) for his [create-android-kotlin-app](https://github.com/nekocode/create-android-kotlin-app) starter python script

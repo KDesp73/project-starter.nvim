@@ -2,6 +2,11 @@ local vim = vim
 
 local M = {}
 
+M.android = function(path, name, package_name)
+    -- Python3 is required
+    vim.cmd(":silent !cd " .. path .. " && " .. "python3 -c \"$(curl -fsSL https://raw.githubusercontent.com/nekocode/create-android-kotlin-app/master/create-android-kotlin-app.py)\" " .. name .. " " .. package_name)
+end
+
 M.c = function(path, name)
     vim.cmd(":silent !cd ".. path .. " && " .. "git clone --depth=1 https://github.com/KDesp73/c-starter " .. name)
     vim.cmd(":silent !cd " .. path .. name .. " && rm -r .git")

@@ -5,4 +5,5 @@ return {
     nvimplugins = nil,
     python = nil,
     ruby = nil,
+    android = nil,
 }
