@@ -4,7 +4,7 @@ local M = {}
 
 M.android = function(path, name, package_name)
     -- Python3 is required
-    vim.cmd(":silent !cd " .. path .. " && " .. "python3 -c \"$(curl -fsSL https://raw.githubusercontent.com/nekocode/create-android-kotlin-app/master/create-android-kotlin-app.py)\" " .. name .. " " .. package_name)
+    vim.cmd(":silent !cd " .. path .. " && " .. "python3 -c \"$(curl -fsSL https://raw.githubusercontent.com/KDesp73/create-android-kotlin-app/master/create-android-kotlin-app.py)\" " .. name .. " " .. package_name)
 end
 
 M.c = function(path, name)
