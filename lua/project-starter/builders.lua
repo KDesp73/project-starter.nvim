@@ -7,6 +7,18 @@ local options     = require("project-starter.options")
 
 
 return {
+    ["esp32"] = function(name)
+        name  = name or vim.fn.input("Name: ")
+
+        local path = paths["esp32"] or vim.fn.input("Path: ")
+        if not utils.handle_invalid_path(path) then return nil end
+
+        run_command.esp32(path, name)
+
+        utils.change_nvim_directory(path .. name)
+        return path .. name
+    end,
+
     ["android"] = function (name)
         name  = name or vim.fn.input("Name: ")
         local package_name = options.jdk_app_package_name or vim.fn.input("App Package Name: ")

@@ -32,6 +32,9 @@ M.setup = function (opts)
         if opts.default_paths.android then
             paths.android = opts.default_paths.android
         end
+        if opts.default_paths.esp32 then
+            paths.esp32 = opts.default_paths.esp32
+        end
     end
 
     if opts.cd ~= nil then

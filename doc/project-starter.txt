@@ -31,5 +31,6 @@
     6. Python
     7. Ruby
     8. Android Apps with Kotlin
+    9. Esp32 Platformio Project
 
 vim:tw=78:ts=8:ft=help:norl:
