@@ -76,6 +76,6 @@ Currently supporting:
 
 [KDesp73](https://github.com/KDesp73)
 
-## Acknowledments
+## Acknowledgments
 
 A big thank you to [nekocode](https://github.com/nekocode) for his [create-android-kotlin-app](https://github.com/nekocode/create-android-kotlin-app) starter python script
