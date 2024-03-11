@@ -53,7 +53,7 @@ Get additional help with `:help project-starter`
 
 ## Commands
 
-- `:CreateProject <arg>`: Creates project starter for specific language
+- `:CreateProject [project-type] [project-name]`: Creates project starter for specific language
 
 ## Templates
 
