@@ -67,14 +67,28 @@ vim.api.nvim_create_user_command(
         for word in args.args:gmatch("[%w%-_.]+") do table.insert(arguments, word) end
 
       if #arguments == 0 then
-            print("At least one argument is needed (" .. utils.get_implemented_languages() .. ")")
+            print("At least one argument is needed (" .. utils.get_implemented_languages_str() .. ")")
             return nil
         end
 
         M.create_project(arguments[1], arguments[2])
     end,
-    { desc = "Create a template project", nargs = '?' }
-)
+    {
+        desc = "Create a template project",
+        nargs = 1,
+        complete = function(arglead)
+            local commands = utils.get_implemented_languages()
 
+            local results = {}
+            for _, v in pairs(commands) do
+                if v:match(arglead) then
+                    table.insert(results, v)
+                end
+            end
+
+            return results
+        end
+    }
+)
 
 return M

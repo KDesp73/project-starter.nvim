@@ -58,6 +58,16 @@ utils.get_implemented_languages = function ()
         table.insert(keyset, k)
     end
 
+    return keyset
+end
+
+utils.get_implemented_languages_str = function ()
+    local keyset = {}
+
+    for k, v in pairs(require("project-starter.builders")) do
+        table.insert(keyset, k)
+    end
+
     local str = ""
 
     for i = 1, #keyset do
