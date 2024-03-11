@@ -1,2 +1,2 @@
-TODO: autocomplete languages
 DONE: allow -, _
+DONE: autocomplete languages
