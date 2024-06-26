@@ -3,7 +3,7 @@ local vim = vim
 local M = {}
 
 M.go = function (path, name)
-    vim.cmd(":silent !cd " .. path .. " && go run scripts/generate-tree.go " .. name)
+    vim.cmd(":silent !cd " .. path .. " && go run $(curl -fsSL https://raw.githubusercontent.com/KDesp73/project-starter.nvim/main/scripts/generate-tree.go)" .. name)
 end
 
 M.esp32 = function (path, name)
