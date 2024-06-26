@@ -3,7 +3,8 @@ local vim = vim
 local M = {}
 
 M.go = function (path, name)
-    vim.cmd(":silent !cd " .. path .. " && wget -gL https://raw.githubusercontent.com/KDesp73/project-starter.nvim/main/scripts/generate-tree.go && go run generate-tree.go " .. name .. " && rm generate-tree.go")
+    local command = ":silent !cd " .. path .. " && wget -qL https://raw.githubusercontent.com/KDesp73/project-starter.nvim/main/scripts/generate-tree.go && go run generate-tree.go " .. name .. " && rm generate-tree.go"
+    vim.cmd(command)
 end
 
 M.esp32 = function (path, name)
