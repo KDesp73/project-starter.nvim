@@ -3,8 +3,7 @@ local vim = vim
 local M = {}
 
 M.go = function (path, name)
-    vim.cmd(":silent !mkdir -p ".. path)
-    vim.cmd(":silent !go run scripts/generate-tree.go " .. path .. name)
+    vim.cmd(":silent !cd " .. path .. " && go run scripts/generate-tree.go " .. name)
 end
 
 M.esp32 = function (path, name)
