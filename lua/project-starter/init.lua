@@ -35,6 +35,9 @@ M.setup = function (opts)
         if opts.default_paths.esp32 then
             paths.esp32 = opts.default_paths.esp32
         end
+        if opts.default_paths.go then
+            paths.go = opts.default_paths.go
+        end
     end
 
     if opts.cd ~= nil then

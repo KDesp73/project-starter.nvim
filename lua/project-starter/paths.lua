@@ -7,4 +7,5 @@ return {
     ruby = nil,
     android = nil,
     esp32 = nil,
+    go = nil,
 }

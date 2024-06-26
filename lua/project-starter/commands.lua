@@ -2,6 +2,10 @@ local vim = vim
 
 local M = {}
 
+M.go = function (path, name)
+    vim.cmd(":silent !cd go run scripts/generate-tree.go " .. path .. "/" .. name)
+end
+
 M.esp32 = function (path, name)
     vim.cmd(":silent !cd " .. path .. " && " .. "git clone --depth=1 https://github.com/KDesp73/esp32-starter " .. name)
     vim.cmd(":silent !cd " .. path .. name .. " && rm -r .git")

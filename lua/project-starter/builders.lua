@@ -7,6 +7,18 @@ local options     = require("project-starter.options")
 
 
 return {
+    ["go"] = function (name)
+        name = name or vim.fn.input("Name: ")
+
+        local path = paths["go"] or vim.fn.input("Path: ")
+        if not utils.handle_invalid_path(path) then return nil end
+
+        run_command.go(path, name)
+
+        utils.change_nvim_directory(path .. name)
+        return path .. name
+    end,
+
     ["esp32"] = function(name)
         name  = name or vim.fn.input("Name: ")
 
