@@ -2,6 +2,13 @@ local vim = vim
 
 local M = {}
 
+M.asm = function (path, name)
+    local command = ":silent !cd " .. path .. " && git clone --depth=1 https://github.com/KDesp73/asm-starter " .. name
+
+    vim.cmd(command)
+    vim.cmd(":silent !cd " .. path .. name .. " && rm -r .git")
+end
+
 M.go = function (path, name)
     local command = ":silent !cd " .. path .. " && wget -qL https://raw.githubusercontent.com/KDesp73/project-starter.nvim/main/scripts/generate-tree.go && go run generate-tree.go " .. name .. " && rm generate-tree.go"
     vim.cmd(command)

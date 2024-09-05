@@ -5,8 +5,19 @@ local utils = require("project-starter.utils")
 local run_command = require("project-starter.commands")
 local options     = require("project-starter.options")
 
-
 return {
+    ["asm"] = function (name)
+        name = name or vim.fn.input("Name: ")
+
+        local path = paths["asm"] or vim.fn.input("Path: ")
+        if not utils.handle_invalid_path(path) then return nil end
+
+        run_command.asm(path, name)
+
+        utils.change_nvim_directory(path .. name)
+        return path .. name
+    end,
+
     ["go"] = function (name)
         name = name or vim.fn.input("Name: ")
 

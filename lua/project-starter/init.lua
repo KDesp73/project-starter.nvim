@@ -38,6 +38,9 @@ M.setup = function (opts)
         if opts.default_paths.go then
             paths.go = opts.default_paths.go
         end
+        if opts.default_paths.asm then
+            paths.asm = opts.default_paths.asm
+        end
     end
 
     if opts.cd ~= nil then

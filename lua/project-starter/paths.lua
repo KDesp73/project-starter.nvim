@@ -8,4 +8,5 @@ return {
     android = nil,
     esp32 = nil,
     go = nil,
+    asm = nil,
 }
