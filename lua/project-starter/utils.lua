@@ -7,8 +7,16 @@ utils.firstToUpper = function(str)
 end
 
 utils.success = function(lang, path)
-    lang = lang or "nil"
-    path = path or "nil"
+    lang = lang or nil
+    path = path or nil
+
+    if lang == nil then
+        return
+    end
+
+    if path == nil then
+        return
+    end
 
     print(utils.firstToUpper(lang) .. " project successfully created at: \'" .. path .. "\'")
 end
@@ -44,7 +52,11 @@ end
 utils.handle_invalid_path = function(path)
     local ok, err = utils.isdir(path)
     if not ok then
-        print("Invalid path")
+        if path == nil then
+            print("Path is nil")
+        else
+            print("Invalid path: '" .. path .. "'")
+        end
         return false
     end
 
