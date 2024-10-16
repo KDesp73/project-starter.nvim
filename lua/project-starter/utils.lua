@@ -1,5 +1,6 @@
 local utils = {}
 
+local socket = require("socket")
 local options = require("project-starter.options")
 
 utils.firstToUpper = function(str)
@@ -92,6 +93,23 @@ utils.get_implemented_languages_str = function ()
     else
         return str
     end
+end
+
+utils.has_internet = function()
+    local test_host = "8.8.8.8" -- Google's public DNS
+    local test_port = 53        -- DNS port
+    local timeout = 2           -- Timeout in seconds
+
+    -- Try to create a TCP connection
+    local connection = socket.tcp()
+    connection:settimeout(timeout)
+
+    -- Attempt to connect to the test host
+    local result = connection:connect(test_host, test_port)
+    connection:close()
+
+    -- Return true if connection was successful
+    return result ~= nil
 end
 
 

@@ -56,6 +56,11 @@ end
 
 ---@param lang string 
 M.create_project = function (lang, name)
+    if !utils.has_internet() then
+        print("Internet connection is required")
+        return
+    end
+
     lang = lang or "nil"
     local builder = builders[lang]
     if builder then
