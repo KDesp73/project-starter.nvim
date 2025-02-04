@@ -41,6 +41,9 @@ M.setup = function (opts)
         if opts.default_paths.asm then
             paths.asm = opts.default_paths.asm
         end
+        if opts.default_paths.php then
+            paths.php = opts.default_paths.php
+        end
     end
 
     if opts.cd ~= nil then

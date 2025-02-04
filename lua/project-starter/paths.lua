@@ -9,4 +9,5 @@ return {
     esp32 = nil,
     go = nil,
     asm = nil,
+    php = nil,
 }

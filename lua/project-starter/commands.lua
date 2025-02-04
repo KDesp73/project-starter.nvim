@@ -2,11 +2,19 @@ local vim = vim
 
 local M = {}
 
-M.asm = function (path, name)
-    local command = ":silent !cd " .. path .. " && git clone --depth=1 https://github.com/KDesp73/asm-starter " .. name
+function default(lang, path, name)
+    local command = ":silent !cd " .. path .. " && git clone --depth=1 https://github.com/KDesp73/" .. lang .. "-starter " .. name
 
     vim.cmd(command)
     vim.cmd(":silent !cd " .. path .. name .. " && rm -r .git")
+end
+
+M.php = function (path, name)
+    default("php", path, name)
+end
+
+M.asm = function (path, name)
+    default("asm", path, name)
 end
 
 M.go = function (path, name)

@@ -1,11 +1,23 @@
 local vim = vim
 
-local paths = require("project-starter.paths")
-local utils = require("project-starter.utils")
+local paths       = require("project-starter.paths")
+local utils       = require("project-starter.utils")
 local run_command = require("project-starter.commands")
 local options     = require("project-starter.options")
 
 return {
+    ["php"] = function (name)
+        name = name or vim.fn.input("Name: ")
+
+        local path = paths["php"] or vim.fn.input("Path: ")
+        if not utils.handle_invalid_path(path) then return nil end
+
+        run_command.php(path, name)
+
+        utils.change_nvim_directory(path .. name)
+        return path .. name
+    end,
+
     ["asm"] = function (name)
         name = name or vim.fn.input("Name: ")
 

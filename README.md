@@ -67,6 +67,8 @@ Currently supporting:
 - Python
 - Ruby
 - Android Apps with Kotlin
+- x86 Assembly
+- PHP
 
 ## License
 
